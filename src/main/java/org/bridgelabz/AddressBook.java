@@ -57,6 +57,7 @@ public class AddressBook {
         }
         return -1;
     }
+
     public void editContact() {
         Scanner scan = new Scanner(System.in);
 
@@ -70,6 +71,20 @@ public class AddressBook {
             return;
         }
         addressBook.set(index, inputDetails());
+    }
 
+    // Ability to delete a person from contacts
+    public void deleteContact() {
+        int index = findContact();
+        if (index == -1) {
+            System.out.println(" ERROR: No such contact");
+            return;
+        }
+        addressBook.remove(index);
+        System.out.println(" Contact deleted!");
+    }
+
+    private int findContact() {
+        return 0;
     }
 }

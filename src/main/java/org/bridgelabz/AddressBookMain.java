@@ -10,7 +10,7 @@ public class AddressBookMain {
         String ch;
         while (true) {
             System.out.println(" **** MENU ****");
-            System.out.println(" 1. Add contacts\n 2. Display contacts\n 3. Edit contacts\n 4. Exit");
+            System.out.println(" 1. Add contacts\n 2. Display contacts\n 3. Edit contacts\n 4. Delete contact\n 5. Exit");
             System.out.print("\n Please enter your choice: ");
 
             ch = scanner.next();
@@ -26,6 +26,9 @@ public class AddressBookMain {
                     addBook.editContact();
                     break;
                 case "4":
+                    addBook.deleteContact();
+                    break;
+                case "5":
                     System.out.println(" Exit");
                     return;
                 default:
