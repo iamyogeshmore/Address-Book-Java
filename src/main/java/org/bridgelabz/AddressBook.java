@@ -47,4 +47,29 @@ public class AddressBook {
             System.out.println(contact);
         }
     }
+    // Method to find a contact via name in the address book arraylist
+
+    public int findContact(String firstName) {
+        for (Contact contact : addressBook) {
+            if (firstName.compareToIgnoreCase(contact.getFirstName()) == 0) {
+                return addressBook.indexOf(contact);
+            }
+        }
+        return -1;
+    }
+    public void editContact() {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print(" Please enter the first name: ");
+        String firstName = scan.next();
+
+        int index = findContact(firstName);
+
+        if (index == -1) {
+            System.out.println(" ERROR: No such contact");
+            return;
+        }
+        addressBook.set(index, inputDetails());
+
+    }
 }
